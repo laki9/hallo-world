@@ -9,3 +9,11 @@
 
 
 
+
+更新
+repo的运行过程中会尝试访问官方的git源更新自己，如果想使用tuna的镜像源进行更新，可以将如下内容复制到你的~/.bashrc里
+
+export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/'
+并重启终端模拟器。
+
+
