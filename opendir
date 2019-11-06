@@ -1,0 +1,30 @@
+#!/bin/bash
+#filename:  openDir.sh
+#author:    Zjmainstay
+#website:   http://zjmainstay.cn
+
+#get current dir
+dir=`pwd`
+cygwinPath="C:\\\\cygwin64"
+
+#get drive
+drive="${dir:10:1}:"
+
+#cygwin dir
+if [ ${dir:1:8} != "cygdrive" ]
+then
+    drive=$cygwinPath
+fi
+
+#replace cygdrive
+dir=${dir/\/cygdrive\/[a-z]/}
+
+#replace / to \\
+dir=${dir//\//\\\\}
+
+#connect dir
+dir=$drive$dir
+
+#open dir
+#explorer $dir  ##this is wrong
+echo "explorer $dir" | sh
